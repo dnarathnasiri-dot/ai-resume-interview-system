@@ -4,6 +4,9 @@ import com.airesume.backend.entity.Resume;
 import com.airesume.backend.entity.User;
 import com.airesume.backend.repository.ResumeRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.pdfbox.Loader;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +20,7 @@ public class ResumeService {
 
     private final ResumeRepository resumeRepository;
     private final UserService userService;
-    private final AIService aiService;  // ⬅️ added
+    private final AIService aiService;
 
     private final String uploadDir = "uploads/";
 
@@ -30,23 +33,37 @@ public class ResumeService {
         Path filePath = Paths.get(uploadDir + fileName);
         Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
-        // Read file content safely based on file type
+        // Extract text based on file type
         String contentText;
         String fileType = file.getContentType();
 
         if (fileType != null && fileType.equals("application/pdf")) {
-            // PDF files - use title and filename for scoring
-            contentText = "Resume Title: " + title + "\n"
-                    + "File: " + file.getOriginalFilename() + "\n"
-                    + "Skills: design, creative, visual, layout, typography, photoshop, illustrator\n"
-                    + "Experience: professional work experience in design field\n"
-                    + "Education: degree qualification certificate\n"
-                    + "Projects: portfolio design projects creative work";
-        } else {
-            // Text/doc files - read content normally
+            // ✅ Real PDF text extraction using PDFBox 3.x
             try {
-                contentText = new String(file.getBytes(), java.nio.charset.StandardCharsets.UTF_8);
-                contentText = contentText.replaceAll("[^\\x20-\\x7E\\n\\r\\t]", " ")
+                PDDocument document = Loader.loadPDF(file.getBytes());
+                PDFTextStripper stripper = new PDFTextStripper();
+                contentText = stripper.getText(document);
+                document.close();
+
+                contentText = contentText
+                        .replaceAll("[^\\x20-\\x7E\\n\\r\\t]", " ")
+                        .replaceAll(" {3,}", " ")
+                        .trim();
+
+                if (contentText.isBlank()) {
+                    contentText = "Resume: " + file.getOriginalFilename();
+                }
+
+            } catch (Exception e) {
+                contentText = "Resume PDF: " + file.getOriginalFilename();
+            }
+
+        } else {
+            try {
+                contentText = new String(file.getBytes(),
+                        java.nio.charset.StandardCharsets.UTF_8);
+                contentText = contentText
+                        .replaceAll("[^\\x20-\\x7E\\n\\r\\t]", " ")
                         .replaceAll(" {3,}", " ")
                         .trim();
                 if (contentText.length() < 20 || contentText.isBlank()) {
@@ -56,6 +73,7 @@ public class ResumeService {
                 contentText = "Resume: " + file.getOriginalFilename();
             }
         }
+
         // Save resume first as PENDING
         Resume resume = Resume.builder()
                 .user(user)
@@ -90,7 +108,8 @@ public class ResumeService {
     public Page<Resume> getResumes(Long userId, String search, int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdAt").descending());
         if (search != null && !search.isEmpty()) {
-            return resumeRepository.findByUserIdAndTitleContainingAndDeletedFalse(userId, search, pageable);
+            return resumeRepository.findByUserIdAndTitleContainingAndDeletedFalse(
+                    userId, search, pageable);
         }
         return resumeRepository.findByUserIdAndDeletedFalse(userId, pageable);
     }

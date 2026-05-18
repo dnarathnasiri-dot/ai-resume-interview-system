@@ -13,6 +13,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final EmailService emailService;  // ⬅️ added
 
     public User register(String name, String email, String password) {
         if (userRepository.existsByEmail(email)) {
@@ -31,7 +32,12 @@ public class UserService {
                 .deleted(false)
                 .build();
 
-        return userRepository.save(user);
+        user = userRepository.save(user);
+
+        // ⬅️ Send verification email
+        emailService.sendVerificationEmail(email, name, token);
+
+        return user;
     }
 
     public User findByEmail(String email) {

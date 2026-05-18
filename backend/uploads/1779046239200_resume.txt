@@ -1,0 +1,15 @@
+John Doe - Software Engineer
+
+Skills: Java, Spring Boot, React, MySQL, Python
+
+Experience:
+- 2 years Java Developer experience
+- Built REST APIs with Spring Boot
+- Led team of 3 developers
+
+Education:
+- Bachelor of Computer Science, NSBM 2024
+
+Projects:
+- AI Resume System (Spring Boot + React)
+- E-commerce website (React + Node.js)
