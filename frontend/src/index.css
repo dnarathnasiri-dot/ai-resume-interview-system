@@ -1,13 +1,60 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile Responsive Utilities */
+@media (max-width: 768px) {
+
+  /* Landing Page */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    padding: 20px !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .steps-row {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Dashboard */
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stats-banner {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Nav */
+  .nav-links {
+    display: none !important;
+  }
+
+  /* Tables */
+  table {
+    font-size: 12px !important;
+  }
+
+  td, th {
+    padding: 8px !important;
+  }
 }
