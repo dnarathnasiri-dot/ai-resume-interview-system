@@ -1,70 +1,344 @@
-# Getting Started with Create React App
+# 🚀 AI Resume & Interview System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![AI Resume Interview Pro](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38bdf8?style=for-the-badge&logo=tailwind-css)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-In the project directory, you can run:
+**A professional, AI-powered web application to help job seekers improve their resumes and ace interviews**
 
-### `npm start`
+[Live Demo](#) • [Documentation](#features) • [Report Bug](https://github.com/dnarathnasiri-dot/ai-resume-interview-system/issues)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📄 **AI Resume Analysis**
+- Upload resumes in PDF, DOC, or DOCX format
+- Instant AI-powered scoring (0-100)
+- Detailed section breakdown (Contact, Summary, Experience, Skills, Education, ATS)
+- Personalized strengths and improvement suggestions
+- ATS keyword optimization analysis
+- Export results to PDF
 
-### `npm run build`
+### 💬 **Mock Interview Practice**
+- **12 diverse interview questions** across multiple categories:
+  - Introduction & Background
+  - Behavioral Questions (STAR method)
+  - Technical Knowledge
+  - Problem Solving & Critical Thinking
+  - Career Goals & Aspirations
+  - Company Culture Fit
+  - Growth Mindset
+  - Closing Questions
+- **2-minute timer** per question
+- **Dynamic AI scoring** based on:
+  - Answer completeness and depth
+  - Professional keyword usage
+  - Response quality metrics
+- Detailed performance feedback with breakdown
+- Interview history tracking
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 📊 **Dashboard & Analytics**
+- Performance metrics overview
+- Interactive progress charts (powered by Recharts)
+- Recent activity feed
+- Quick actions for resume upload and interviews
+- Visual data representation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 👤 **User Profile**
+- Personal information management
+- Complete interview history with scores
+- Resume version tracking
+- Performance statistics and trends
+- Account settings
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🎨 Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<div align="center">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Landing Page
+![Landing Page](docs/screenshots/landing.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Interview Practice
+![Interview](docs/screenshots/interview.png)
 
-## Learn More
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🛠️ Tech Stack
 
-### Code Splitting
+### Frontend
+- **React 18.3.1** - Modern UI library with hooks
+- **TypeScript 5.7** - Type-safe development
+- **React Router 7** - Client-side routing
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Framer Motion 12** - Smooth animations
+- **Recharts 2** - Beautiful chart visualizations
+- **shadcn/ui** - High-quality UI components
+- **Lucide React** - Beautiful icon library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build Tools
+- **Vite 6** - Lightning-fast build tool
+- **pnpm** - Efficient package manager
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🚀 Quick Start
 
-### Making a Progressive Web App
+### Prerequisites
+- Node.js 18+ 
+- pnpm (recommended) or npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation
 
-### Advanced Configuration
+```bash
+# Clone the repository
+git clone https://github.com/dnarathnasiri-dot/ai-resume-interview-system.git
+cd ai-resume-interview-system
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Install dependencies
+pnpm install
+# or
+npm install
 
-### Deployment
+# Start development server
+pnpm dev
+# or
+npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Build for production
+pnpm build
+# or
+npm run build
+```
 
-### `npm run build` fails to minify
+The application will be available at `http://localhost:5173`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 📁 Project Structure
+
+```
+ai-resume-interview-system/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── ui/              # shadcn/ui components
+│   │   │   ├── LoadingSpinner.tsx
+│   │   │   └── figma/
+│   │   ├── pages/
+│   │   │   ├── landing.tsx      # Landing page
+│   │   │   ├── auth.tsx         # Login/Register
+│   │   │   ├── dashboard.tsx    # Main dashboard
+│   │   │   ├── resume-upload.tsx
+│   │   │   ├── interview.tsx
+│   │   │   └── profile.tsx
+│   │   ├── routes.tsx           # Route configuration
+│   │   └── App.tsx             # Root component
+│   ├── styles/
+│   │   ├── theme.css
+│   │   └── fonts.css
+│   └── index.tsx
+├── package.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+## 🎯 Usage
+
+### 1. **Landing Page**
+Visit the home page to learn about features and get started
+
+### 2. **Sign Up / Login**
+Create an account or sign in (currently uses mock authentication)
+
+### 3. **Upload Resume**
+- Navigate to Resume Upload
+- Drag & drop your resume or click to browse
+- Get instant AI-powered analysis with detailed feedback
+
+### 4. **Practice Interviews**
+- Go to Interview section
+- Answer 12 diverse interview questions
+- Receive AI-generated scores and feedback
+
+### 5. **Track Progress**
+- View your dashboard for performance metrics
+- Check interview and resume history
+- Monitor improvement over time
+
+---
+
+## 🎨 Design Highlights
+
+### Modern UI/UX
+- **Gradient Color Scheme**: Professional blue-indigo-purple gradient theme
+- **Glass Morphism**: Frosted glass effects with backdrop blur
+- **Smooth Animations**: Motion-powered transitions and micro-interactions
+- **Responsive Design**: Optimized for desktop, tablet, and mobile
+- **Accessibility**: WCAG 2.1 compliant components
+
+### Key Design Elements
+- Large, bold typography with gradient effects
+- Elevated cards with shadow-xl
+- Hover animations and transitions
+- Professional icon integration
+- Cohesive color palette
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env` file in the root directory:
+
+```env
+VITE_API_URL=http://localhost:8080/api
+VITE_APP_NAME=AI Interview Pro
+```
+
+### Customization
+
+#### Colors
+Edit Tailwind classes in components:
+```tsx
+// Primary gradient
+className="bg-gradient-to-r from-blue-600 to-indigo-600"
+
+// Accent gradients
+from-purple-500 to-pink-500
+from-green-500 to-emerald-500
+```
+
+#### API Integration
+Replace mock data with real API calls:
+```tsx
+// Example: Resume analysis
+const response = await fetch(`${import.meta.env.VITE_API_URL}/analyze`, {
+  method: 'POST',
+  body: formData
+});
+const data = await response.json();
+```
+
+---
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+```bash
+npm i -g vercel
+vercel
+```
+
+### Netlify
+```bash
+npm run build
+# Upload dist/ folder to Netlify
+```
+
+### Docker
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "run", "preview"]
+```
+
+---
+
+## 🗺️ Roadmap
+
+### Phase 1: Backend Integration (In Progress)
+- [ ] Connect to Spring Boot API
+- [ ] Implement JWT authentication
+- [ ] Real resume parsing with NLP
+- [ ] Database persistence (MySQL)
+- [ ] User session management
+
+### Phase 2: Enhanced Features
+- [ ] PDF export of analysis results
+- [ ] Email notifications
+- [ ] Video interview practice with recording
+- [ ] Company-specific interview prep
+- [ ] Resume templates and builder
+- [ ] Job matching recommendations
+
+### Phase 3: Advanced AI
+- [ ] Custom AI models for scoring
+- [ ] Natural language processing for answers
+- [ ] Sentiment analysis
+- [ ] Industry-specific feedback
+- [ ] Multi-language support
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author
+
+**dnarathnasiri-dot**
+
+- GitHub: [@dnarathnasiri-dot](https://github.com/dnarathnasiri-dot)
+- Repository: [ai-resume-interview-system](https://github.com/dnarathnasiri-dot/ai-resume-interview-system)
+
+---
+
+## 🙏 Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) - Beautiful UI components
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [Recharts](https://recharts.org/) - Chart library
+- [Lucide Icons](https://lucide.dev/) - Icon set
+
+---
+
+## 📞 Support
+
+If you have any questions or need help:
+- Open an [Issue](https://github.com/dnarathnasiri-dot/ai-resume-interview-system/issues)
+- Contact: [Your Email]
+
+---
+
+<div align="center">
+
+**⭐ Star this repository if you find it helpful!**
+
+Made with ❤️ by [dnarathnasiri-dot](https://github.com/dnarathnasiri-dot)
+
+</div>
